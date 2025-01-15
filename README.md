@@ -1,50 +1,66 @@
-# React + TypeScript + Vite
+# React Unit Testing Examples
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository demonstrates different approaches to unit testing in React applications, focusing on data fetching patterns and state management.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React 18
+- TypeScript
+- Vite
+- Vitest
+- MSW (Mock Service Worker)
+- Testing Library React
+- TailwindCSS
 
-## Expanding the ESLint configuration
+## To-Do List
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### 1. Basic Data Fetching Tests ✅
 
-- Configure the top-level `parserOptions` property like this:
+- [x] Setup MSW for API mocking
+- [x] Test loading states
+- [x] Test success states
+- [x] Test error states
+- [ ] Test pagination
+- [ ] Test user interactions
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### 2. TanStack Query Implementation
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- [ ] Setup TanStack Query
+- [ ] Create custom hooks for data fetching
+- [ ] Test query loading states
+- [ ] Test query error boundaries
+- [ ] Test query mutations
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### 3. Redux Toolkit Implementation
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- [ ] Setup Redux store
+- [ ] Create user slice
+- [ ] Test reducers
+
+## Testing Patterns
+
+### MSW (Mock Service Worker)
+
+- API mocking for tests
+- Network request interception
+- Response simulation
+
+### Testing Library
+
+- Component rendering
+- User interactions
+- Async operations
+- DOM queries
+
+## Contributing
+
+Feel free to contribute by:
+
+1. Creating issues for bugs or suggestions
+2. Submitting pull requests with improvements
+3. Adding more test examples
+4. Improving documentation
+
+## License
+
+MIT
